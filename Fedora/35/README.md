@@ -2,11 +2,9 @@
 ---
 
 ### For normal use, please install:
-#### [fwupd](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/fwupd_1.7.0+r325+gf6833f96_amd64.deb)
-#### [libfwupd2](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libfwupd2_1.7.0+r325+gf6833f96_amd64.deb)
-#### [libfwupdplugin4](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libfwupdplugin4_1.7.0+r325+gf6833f96_amd64.deb)
-#### [libflashrom1](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libflashrom1_1.2-6_amd64.deb)
-#### [coreboot-configurator](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/coreboot-configurator+8_2_all.deb)
+#### [fwupd](https://github.com/StarLabsLtd/packages/raw/main/Fedora/35/fwupd-1.7.4-0.1alpha.fc34.x86_64.rpm)
+#### [fwupd-plugin-flashrom](https://github.com/StarLabsLtd/packages/raw/main/Fedora/35/fwupd-plugin-flashrom-1.7.4-0.1alpha.fc34.x86_64.rpm)
+#### [coreboot-configurator](https://github.com/StarLabsLtd/packages/raw/main/Fedora/35/coreboot-configurator+8_2_all.deb) -- TBC
 ---
 # [© Star Labs®](https://starlabs.systems) / All Rights Reserved.
 Any issues or questions, please contact us at [support@starlabs.systems](mailto:supportstarlabs.systems)
