@@ -2,10 +2,10 @@
 ---
 
 ### For normal use, please install:
-#### [fwupd](https://github.com/StarLabsLtd/packages/raw/master/Debian/11/fwupd_1.7.0+r325+gf6833f96_amd64.deb)
-#### [libfwupd2](https://github.com/StarLabsLtd/packages/raw/master/Debian/11/libfwupd2_1.7.0+r325+gf6833f96_amd64.deb)
-#### [libfwupdplugin4](https://github.com/StarLabsLtd/packages/raw/master/Debian/11/libfwupdplugin4_1.7.0+r325+gf6833f96_amd64.deb)
-#### [libflashrom1](https://github.com/StarLabsLtd/packages/raw/master/Debian/11/libflashrom1_1.2-6_amd64.deb)
+#### [fwupd](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/fwupd_1.7.0+r325+gf6833f96_amd64.deb)
+#### [libfwupd2](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libfwupd2_1.7.0+r325+gf6833f96_amd64.deb)
+#### [libfwupdplugin4](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libfwupdplugin4_1.7.0+r325+gf6833f96_amd64.deb)
+#### [libflashrom1](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libflashrom1_1.2-6_amd64.deb)
 ---
 # [© Star Labs®](https://starlabs.systems) / All Rights Reserved.
 Any issues or questions, please contact us at [support@starlabs.systems](mailto:supportstarlabs.systems)
