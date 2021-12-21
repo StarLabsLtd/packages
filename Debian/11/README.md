@@ -6,6 +6,7 @@
 #### [libfwupd2](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libfwupd2_1.7.0+r325+gf6833f96_amd64.deb)
 #### [libfwupdplugin4](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libfwupdplugin4_1.7.0+r325+gf6833f96_amd64.deb)
 #### [libflashrom1](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libflashrom1_1.2-6_amd64.deb)
+#### [coreboot-configurator](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/coreboot-configurator+8_2_all.deb)
 ---
 # [© Star Labs®](https://starlabs.systems) / All Rights Reserved.
 Any issues or questions, please contact us at [support@starlabs.systems](mailto:supportstarlabs.systems)
