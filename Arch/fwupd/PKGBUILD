@@ -1,0 +1,83 @@
+# Maintainer: Bernhard Landauer <bernahrd@manjaro.org>
+# ArchlinuxMaintainer: Bruno Pagani <archange@archlinux.org>
+# Contributor: Mirco Tischler <mt-ml at gmx dot de>
+
+_pkgname=fwupd
+pkgname=fwupd-starlabs
+_commit=539413ca
+pkgver=1.7.6.r321.g539413ca
+pkgrel=1
+pkgdesc="Simple daemon to allow session software to update Starlabs firmwares"
+arch=(x86_64)
+url="https://github.com/fwupd/fwupd"
+license=(LGPL)
+conflicts=('fwupd' 'fwupd-git')
+depends=('fwupd-efi'
+    'libxmlb' 'efivar' 'python' 'libsmbios' 'libgusb'
+    'polkit' 'shared-mime-info' 'tpm2-tss' 'flashrom'
+    'libjcat' 'gcab' 'libarchive.so'
+    'libjson-glib-1.0.so' 'libgudev-1.0.so' 'libmm-glib.so'
+    'libqmi-glib.so' 'libprotobuf-c.so' 'libcbor')
+optdepends=(
+    'modemmanager: modem firmware upgrade support'
+    'udisks2: UEFI firmware upgrade support'
+)
+makedepends=(
+    'cmake' 'gi-docgen' 'meson' 'valgrind' 'gobject-introspection' 'gtk-doc'
+    'python-cairo' 'noto-fonts' 'noto-fonts-cjk' 'python-gobject' 'vala'
+    'bash-completion' 'python-pillow' 'help2man' 'gnu-efi-libs' 'git')
+provides=('libfwupd.so' 'libfwupdplugin.so' "${_pkgname}")
+checkdepends=(umockdev)
+backup=('etc/fwupd/daemon.conf'
+        'etc/fwupd/redfish.conf'
+        'etc/fwupd/remotes.d/dell-esrt.conf'
+        'etc/fwupd/remotes.d/fwupd-tests.conf'
+        'etc/fwupd/remotes.d/lvfs-testing.conf'
+        'etc/fwupd/remotes.d/lvfs.conf'
+        'etc/fwupd/remotes.d/vendor-directory.conf'
+        'etc/fwupd/remotes.d/vendor.conf'
+        'etc/fwupd/thunderbolt.conf'
+        'etc/fwupd/uefi_capsule.conf'
+        'etc/fwupd/upower.conf')
+source=("git+https://github.com/StarLabsLtd/${_pkgname}.git#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+    cd $_pkgname
+    git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+    cd $_pkgname
+    if [ -n "$CI" ]; then
+        export CI="--wrap-mode=default"
+    fi
+    arch-meson -D b_lto=false $CI ../build \
+        -Dplugin_intel_spi=true \
+        -Dplugin_powerd=false \
+        -Dlzma=true \
+        -Ddocs=gtkdoc \
+        -Defi_binary=false \
+        -Dsupported_build=true
+
+    ninja -v -C ../build
+}
+
+check() {
+    meson test -C build
+}
+
+package() {
+    DESTDIR="${pkgdir}" meson install -C "${srcdir}/build"
+
+    # Fixup mode to match polkit
+    install -d -o root -g 102 -m 750 "${pkgdir}"/usr/share/polkit-1/rules.d
+
+    # Remove the tests
+    rm -r "${pkgdir}"/usr/share/installed-tests/
+    mv "${pkgdir}"/usr/bin/{,fwupd-}dbxtool
+    mv "${pkgdir}"/usr/share/man/man1/{,fwupd-}dbxtool.1
+
+    # Remove msr module-load config as it is built-in
+    rm "${pkgdir}"/usr/lib/modules-load.d/fwupd-msr.conf
+}

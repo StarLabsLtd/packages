@@ -1,0 +1,30 @@
+# Maintainer: Bernhard Landauer <bernhard@manjaro.org>
+# AUR-Maintainer: Ludvig Holtze <ludvig dot holtze at protonmail dot com>
+
+pkgname=nvramtool
+pkgver=4.13.r3632.g6e9f21f815b
+pkgrel=1
+pkgdesc="A utility for interfacing with CMOS/NVRAM on Coreboot systems"
+url="https://www.coreboot.org/Nvramtool"
+license=('GPL2')
+arch=('i686' 'x86_64')
+makedepends=('git')
+source=('git+https://review.coreboot.org/coreboot.git')
+sha256sums=('SKIP')
+
+pkgver() {
+    cd coreboot
+    git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+    cd coreboot/util/nvramtool
+    make
+}
+
+package() {
+    cd coreboot/util/nvramtool
+    install -d "$pkgdir/usr/bin" "$pkgdir/usr/share/man/man8"
+    install -m755 nvramtool "$pkgdir/usr/bin/nvramtool"
+    install -m644 cli/nvramtool.8 "$pkgdir/usr/share/man/man8"
+}
