@@ -2,9 +2,9 @@
 ---
 
 ### For normal use, please install:
-#### [fwupd](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/) # Unavailable
-#### [libfwupd2](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/) # Unavailable
-#### [libfwupdplugin6](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/) # Unavailable
+#### [fwupd](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/fwupd_1.8.2+r28+g3557a34af_amd64.deb)
+#### [libfwupd2](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libfwupd2_1.8.2+r28+g3557a34af_amd64.deb)
+#### [libfwupdplugin7](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libfwupdplugin7_1.8.2+r28+g3557a34af_amd64.deb)
 #### [libflashrom1](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libflashrom1_1.2-9+f_amd64.deb)
 #### [coreboot-configurator](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/coreboot-configurator_10+f_all.deb)
 #### [nvramtool](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/nvramtool_1_all.deb)
