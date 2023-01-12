@@ -8,7 +8,7 @@ arch=('x86_64')
 url="https://github.com/StarLabsLtd/coreboot-configurator"
 license=('GPL3')
 depends=('nvramtool' 'qt5-base' 'qt5-svg' 'yaml-cpp')
-makedepends=('inkscape' 'meson' 'qt5-tools' 'cmake')
+makedepends=('inkscape' 'meson' 'qt5-tools' 'cmake' 'boost-libs')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz")
 sha256sums=('176d7f64ee32d3d03bbc3674d48ffe479d8450068a4b7bd26d328ed80d2a1c75')
 
