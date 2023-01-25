@@ -2,12 +2,23 @@
 ---
 
 ### For normal use, please install:
-#### [fwupd](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/fwupd_1.8.3+r49+gad4f9ad39_amd64.deb)
-#### [libfwupd2](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libfwupd2_1.8.3+r49+gad4f9ad39_amd64.deb)
-#### [libfwupdplugin7](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libfwupdplugin7_1.8.3+r49+gad4f9ad39_amd64.deb)
-#### [libflashrom1](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libflashrom1_1.2-9+f_amd64.deb)
+#### [fwupd](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/fwupd_1.8.10+r17+gaf5fb429c_amd64.deb)
+#### [libfwupd2](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libfwupd2_1.8.10+r17+gaf5fb429c_amd64.deb)
+#### [libflashrom1](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libflashrom1_1.2-10+f_amd64.deb)
 #### [coreboot-configurator](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/coreboot-configurator_10+f_all.deb)
 #### [nvramtool](https://github.com/StarLabsLtd/packages/raw/main/Debian/11/nvramtool_1_all.deb)
+
+The below terminal command will download these and install them:
+```
+cd /tmp
+wget https://github.com/StarLabsLtd/packages/raw/main/Debian/11/fwupd_1.8.10+r17+gaf5fb429c_amd64.deb
+wget https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libfwupd2_1.8.10+r17+gaf5fb429c_amd64.deb
+wget https://github.com/StarLabsLtd/packages/raw/main/Debian/11/libflashrom1_1.2-10+f_amd64.deb
+wget https://github.com/StarLabsLtd/packages/raw/main/Debian/11/coreboot-configurator_10+f_all.deb
+wget https://github.com/StarLabsLtd/packages/raw/main/Debian/11/nvramtool_1_all.deb
+sudo dpkg -i *.deb
+sudo apt -f install
+```
 ---
 # [© Star Labs®](https://starlabs.systems) / All Rights Reserved.
 Any issues or questions, please contact us at [support@starlabs.systems](mailto:supportstarlabs.systems)
